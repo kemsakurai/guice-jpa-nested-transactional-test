@@ -70,8 +70,8 @@ public class MyEntityRepositoryUnitOfWorkTest {
         try {
             repo = injector.getInstance(MyEntityRepository.class);
             repo.begin();
-            assertNull(repo.findById(1));
-            assertNull(repo.findById(2));
+            assertNull(repo.findByName("Test 1"));
+            assertNull(repo.findByName("Test 2"));
             repo.commit();
         } finally {
             unitOfwork.end();
